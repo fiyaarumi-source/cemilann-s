@@ -17,8 +17,9 @@
       --leaf: #4C7A52;
       --leaf-soft: #E7F0E4;
       --line: #EEDFD6;
-      --wa-green: #25D366;
-      --wa-dark: #128C7E;
+      --wa-green: #3A6351;
+      --wa-dark: #2B4C3E;
+      --line-soft: #F2E8E3;
     }
 
     * { box-sizing: border-box; }
@@ -87,20 +88,22 @@
       gap: 10px;
       margin-top: 24px;
       background: var(--wa-green);
-      color: white;
+      color: #FFFFFF;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      padding: 14px 28px;
+      font-family: 'Fraunces', serif; /* Font aesthetic serif seragam dengan judul */
+      font-weight: 600;
+      font-size: 15.5px;
+      letter-spacing: 0.02em;
+      padding: 14px 30px;
       border-radius: 100px;
-      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
-      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(58, 99, 81, 0.2);
+     transition: all 0.25s ease;
     }
 
     .cta-btn:hover {
       background: var(--wa-dark);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      box-shadow: 0 6px 20px rgba(58, 99, 81, 0.3);
     }
 
     section.category { margin-bottom: 52px; }
@@ -223,7 +226,7 @@
     /* Info Kontak & Pemesanan Footer */
     .order-info-card {
       background: var(--bg-card);
-      border: 2px dashed var(--berry);
+      border: 1px solid var(--line-soft);
       border-radius: 16px;
       padding: 32px 24px;
       text-align: center;
