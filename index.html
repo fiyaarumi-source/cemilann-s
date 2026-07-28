@@ -1,433 +1,481 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katalog Harga</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #FFF8F4;
-    --bg-card: #FFFFFF;
-    --ink: #2B1B22;
-    --ink-soft: #6E5A5F;
-    --berry: #C7355F;
-    --berry-deep: #9E2249;
-    --leaf: #4C7A52;
-    --leaf-soft: #E7F0E4;
-    --peach: #F3D9BB;
-    --peach-soft: #FBEEDE;
-    --line: #EEDFD6;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Cemilaan's</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFF8F4;
+      --bg-card: #FFFFFF;
+      --ink: #2B1B22;
+      --ink-soft: #6E5A5F;
+      --berry: #C7355F;
+      --berry-deep: #9E2249;
+      --leaf: #4C7A52;
+      --leaf-soft: #E7F0E4;
+      --line: #EEDFD6;
+      --wa-green: #25D366;
+      --wa-dark: #128C7E;
+    }
 
-  * { box-sizing: border-box; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Work Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Work Sans', sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
 
-  .wrap {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
+    header.hero {
+      text-align: center;
+      padding-bottom: 36px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--line);
+    }
 
-  header.hero {
-    text-align: center;
-    padding-bottom: 36px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid var(--line);
-  }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--berry);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
 
-  .eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--berry);
-    font-weight: 600;
-    margin-bottom: 14px;
-  }
+    h1.brand {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: clamp(38px, 7vw, 60px);
+      line-height: 1.02;
+      margin: 0 0 12px;
+      color: var(--berry-deep);
+    }
 
-  h1.brand {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: clamp(38px, 7vw, 60px);
-    line-height: 1.02;
-    margin: 0 0 12px;
-    color: var(--berry-deep);
-  }
+    header.hero p.sub {
+      color: var(--ink-soft);
+      font-size: 15px;
+      max-width: 480px;
+      margin: 0 auto 20px;
+    }
 
-  header.hero p.sub {
-    color: var(--ink-soft);
-    font-size: 15px;
-    max-width: 480px;
-    margin: 0 auto;
-  }
+    .po-badge {
+      display: inline-block;
+      padding: 7px 16px;
+      background: var(--leaf-soft);
+      color: var(--leaf);
+      border-radius: 100px;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
 
-  .po-badge {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 7px 16px;
-    background: var(--leaf-soft);
-    color: var(--leaf);
-    border-radius: 100px;
-    font-size: 12.5px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-  }
+    /* Tombol Kontak WA Utama */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+      background: var(--wa-green);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+      transition: all 0.2s ease;
+    }
 
-  section.category {
-    margin-bottom: 52px;
-  }
+    .cta-btn:hover {
+      background: var(--wa-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    }
 
-  .cat-head {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    margin-bottom: 6px;
-  }
+    section.category { margin-bottom: 52px; }
 
-  .cat-num {
-    font-family: 'Fraunces', serif;
-    font-size: 15px;
-    color: var(--berry);
-    font-weight: 600;
-  }
+    .cat-head {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
 
-  h2.cat-title {
-    font-family: 'Fraunces', serif;
-    font-size: 26px;
-    font-weight: 600;
-    margin: 0;
-    color: var(--ink);
-  }
+    .cat-num {
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      color: var(--berry);
+      font-weight: 600;
+    }
 
-  .cat-desc {
-    color: var(--ink-soft);
-    font-size: 14px;
-    margin: 6px 0 22px;
-    padding-left: 29px;
-  }
+    h2.cat-title {
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      font-weight: 600;
+      margin: 0;
+      color: var(--ink);
+    }
 
-  /* Simple variant cards - cocol & saltbread & salad */
-  .variant-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-  }
+    .cat-desc {
+      color: var(--ink-soft);
+      font-size: 14px;
+      margin: 6px 0 22px;
+      padding-left: 29px;
+    }
 
-  .variant-card {
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 18px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-  }
+    /* Variant Cards (Clickable) */
+    .variant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
 
-  .variant-name {
-    font-weight: 600;
-    font-size: 15.5px;
-  }
+    .variant-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
 
-  .variant-note {
-    font-size: 12.5px;
-    color: var(--ink-soft);
-    margin-top: 3px;
-  }
+    .variant-card:hover {
+      border-color: var(--berry);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(199, 53, 95, 0.08);
+    }
 
-  .variant-price {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 19px;
-    color: var(--berry-deep);
-    white-space: nowrap;
-  }
+    .variant-name { font-weight: 600; font-size: 15.5px; }
+    .variant-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 3px; }
+    .variant-price {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--berry-deep);
+      white-space: nowrap;
+    }
 
-  /* Strawberry grade matrix */
-  .grade-table-wrap {
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 8px;
-    overflow-x: auto;
-  }
+    /* Strawberry Grade Table */
+    .grade-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 8px;
+      overflow-x: auto;
+    }
 
-  table.grade-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 560px;
-  }
+    table.grade-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+    }
 
-  table.grade-table th, table.grade-table td {
-    padding: 14px 16px;
-    text-align: left;
-  }
+    table.grade-table th, table.grade-table td {
+      padding: 14px 16px;
+      text-align: left;
+    }
 
-  table.grade-table thead th {
-    font-size: 11.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--ink-soft);
-    font-weight: 600;
-    border-bottom: 1px solid var(--line);
-  }
+    table.grade-table thead th {
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      font-weight: 600;
+      border-bottom: 1px solid var(--line);
+    }
 
-  table.grade-table thead th.price-col {
-    text-align: right;
-  }
+    table.grade-table thead th.price-col { text-align: right; }
+    table.grade-table tbody tr:not(:last-child) td { border-bottom: 1px solid var(--line); }
 
-  table.grade-table tbody tr:not(:last-child) td {
-    border-bottom: 1px solid var(--line);
-  }
+    .grade-name-cell { display: flex; align-items: center; gap: 10px; }
+    .grade-name { font-weight: 600; font-size: 15px; }
+    .grade-butir { font-size: 12px; color: var(--ink-soft); display: block; margin-top: 2px; }
 
-  .grade-name-cell {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+    .size-dots { display: flex; align-items: center; gap: 3px; flex-shrink: 0; }
+    .size-dots span { display: block; border-radius: 50%; background: var(--berry); }
 
-  .grade-name {
-    font-weight: 600;
-    font-size: 15px;
-  }
+    td.price-col {
+      text-align: right;
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 15.5px;
+      color: var(--berry-deep);
+      white-space: nowrap;
+    }
 
-  .grade-butir {
-    font-size: 12px;
-    color: var(--ink-soft);
-    display: block;
-    margin-top: 2px;
-  }
+    /* Info Kontak & Pemesanan Footer */
+    .order-info-card {
+      background: var(--bg-card);
+      border: 2px dashed var(--berry);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      margin-top: 40px;
+    }
 
-  /* size dots signature element: relative berry size per grade */
-  .size-dots {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    flex-shrink: 0;
-  }
-  .size-dots span {
-    display: block;
-    border-radius: 50%;
-    background: var(--berry);
-  }
+    .order-info-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      color: var(--berry-deep);
+      margin: 0 0 8px;
+    }
 
-  td.price-col {
-    text-align: right;
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 15.5px;
-    color: var(--berry-deep);
-    white-space: nowrap;
-  }
+    .order-info-card p {
+      color: var(--ink-soft);
+      font-size: 14px;
+      margin: 0 0 20px;
+    }
 
-  footer {
-    text-align: center;
-    margin-top: 60px;
-    padding-top: 24px;
-    border-top: 1px solid var(--line);
-    color: var(--ink-soft);
-    font-size: 13px;
-  }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
 
-  @media (max-width: 480px) {
-    .cat-desc { padding-left: 0; }
-    .wrap { padding: 32px 16px 60px; }
-  }
-</style>
+    @media (max-width: 480px) {
+      .cat-desc { padding-left: 0; }
+      .wrap { padding: 32px 16px 60px; }
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header class="hero">
-    <div class="eyebrow">Daftar Harga</div>
-    <h1 class="brand">Katalog Cemilaan's</h1>
-    <p class="sub">Strawberry cocol, strawberry segar, salt bread, salad, dan kimbab — semua fresh, dibuat & disiapkan setelah pesanan masuk.</p>
-    <span class="po-badge">Sistem Pre-Order (PO)</span>
-  </header>
+  <div class="wrap">
+    
+    <header class="hero">
+      <div class="eyebrow">Daftar Harga</div>
+      <h1 class="brand">Katalog Cemilaan's</h1>
+      <p class="sub">Strawberry cocol, strawberry segar, salt bread, salad, dan kimbab — semua fresh, dibuat & disiapkan setelah pesanan masuk.</p>
+      <div>
+        <span class="po-badge">Sistem Pre-Order (PO)</span>
+      </div>
+      
+      <!-- Tombol Klik WA di Hero Header -->
+      <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan" target="_blank" class="cta-btn">
+        💬 Pesan via WhatsApp
+      </a>
+    </header>
 
-  <section class="category">
-    <div class="cat-head">
-      <span class="cat-num">01</span>
-      <h2 class="cat-title">Strawberry Cocol</h2>
-    </div>
-    <p class="cat-desc">Strawberry segar + saus dip, 1 kotak isi lengkap dengan garpu kecil.</p>
-    <div class="variant-grid">
-      <div class="variant-card">
-        <div>
-          <div class="variant-name">Choco</div>
-          <div class="variant-note">Saus coklat premium</div>
-        </div>
-        <div class="variant-price">Rp18.000</div>
+    <!-- Category 01 -->
+    <section class="category">
+      <div class="cat-head">
+        <span class="cat-num">01</span>
+        <h2 class="cat-title">Strawberry Cocol</h2>
       </div>
-      <div class="variant-card">
-        <div>
-          <div class="variant-name">Matcha</div>
-          <div class="variant-note">Saus matcha</div>
-        </div>
-        <div class="variant-price">Rp17.000</div>
-      </div>
-      <div class="variant-card">
-        <div>
-          <div class="variant-name">Bubble</div>
-          <div class="variant-note">Saus bubblegum</div>
-        </div>
-        <div class="variant-price">Rp17.000</div>
-      </div>
-    </div>
-  </section>
+      <p class="cat-desc">Klik varian pilihanmu untuk langsung pesan di WhatsApp!</p>
+      
+      <div class="variant-grid">
+        <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan%20Strawberry%20Cocol%20Choco" target="_blank" class="variant-card">
+          <div>
+            <div class="variant-name">Choco</div>
+            <div class="variant-note">Saus coklat premium</div>
+          </div>
+          <div class="variant-price">Rp18.000</div>
+        </a>
 
-  <section class="category">
-    <div class="cat-head">
-      <span class="cat-num">02</span>
-      <h2 class="cat-title">Strawberry Segar</h2>
-    </div>
-    <p class="cat-desc">Buah asli tanpa olahan, tersedia per kg atau repack kecil. Makin besar butirnya, makin naik gradenya.</p>
-    <div class="grade-table-wrap">
-      <table class="grade-table">
-        <thead>
-          <tr>
-            <th>Grade</th>
-            <th class="price-col">250 gr</th>
-            <th class="price-col">500 gr</th>
-            <th class="price-col">1 kg</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="grade-name-cell">
-                <span class="size-dots"><span style="width:6px;height:6px;"></span></span>
-                <div>
-                  <span class="grade-name">Reguler</span>
-                  <span class="grade-butir">~150 butir/kg</span>
+        <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan%20Strawberry%20Cocol%20Matcha" target="_blank" class="variant-card">
+          <div>
+            <div class="variant-name">Matcha</div>
+            <div class="variant-note">Saus matcha</div>
+          </div>
+          <div class="variant-price">Rp17.000</div>
+        </a>
+
+        <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan%20Strawberry%20Cocol%20Bubble" target="_blank" class="variant-card">
+          <div>
+            <div class="variant-name">Bubble</div>
+            <div class="variant-note">Saus bubblegum</div>
+          </div>
+          <div class="variant-price">Rp17.000</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Category 02 -->
+    <section class="category">
+      <div class="cat-head">
+        <span class="cat-num">02</span>
+        <h2 class="cat-title">Strawberry Segar</h2>
+      </div>
+      <p class="cat-desc">Buah asli tanpa olahan, tersedia per kg atau repack kecil. Makin besar butirnya, makin naik gradenya.</p>
+
+      <div class="grade-table-wrap">
+        <table class="grade-table">
+          <thead>
+            <tr>
+              <th>Grade</th>
+              <th class="price-col">250 gr</th>
+              <th class="price-col">500 gr</th>
+              <th class="price-col">1 kg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="grade-name-cell">
+                  <span class="size-dots"><span style="width:6px;height:6px;"></span></span>
+                  <div>
+                    <span class="grade-name">Reguler</span>
+                    <span class="grade-butir">~150 butir/kg</span>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td class="price-col">Rp17.000</td>
-            <td class="price-col">Rp35.000</td>
-            <td class="price-col">Rp66.000</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="grade-name-cell">
-                <span class="size-dots"><span style="width:8px;height:8px;"></span></span>
-                <div>
-                  <span class="grade-name">Super C</span>
-                  <span class="grade-butir">~100 butir/kg</span>
+              </td>
+              <td class="price-col">Rp17.000</td>
+              <td class="price-col">Rp35.000</td>
+              <td class="price-col">Rp66.000</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="grade-name-cell">
+                  <span class="size-dots"><span style="width:8px;height:8px;"></span></span>
+                  <div>
+                    <span class="grade-name">Super C</span>
+                    <span class="grade-butir">~100 butir/kg</span>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td class="price-col">Rp20.000</td>
-            <td class="price-col">Rp40.000</td>
-            <td class="price-col">Rp77.000</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="grade-name-cell">
-                <span class="size-dots"><span style="width:10px;height:10px;"></span></span>
-                <div>
-                  <span class="grade-name">Super AB</span>
-                  <span class="grade-butir">~80 butir/kg</span>
+              </td>
+              <td class="price-col">Rp20.000</td>
+              <td class="price-col">Rp40.000</td>
+              <td class="price-col">Rp77.000</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="grade-name-cell">
+                  <span class="size-dots"><span style="width:10px;height:10px;"></span></span>
+                  <div>
+                    <span class="grade-name">Super AB</span>
+                    <span class="grade-butir">~80 butir/kg</span>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td class="price-col">Rp23.000</td>
-            <td class="price-col">Rp46.000</td>
-            <td class="price-col">Rp88.000</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="grade-name-cell">
-                <span class="size-dots"><span style="width:13px;height:13px;"></span></span>
-                <div>
-                  <span class="grade-name">Jumbo A</span>
-                  <span class="grade-butir">~66 butir/kg</span>
+              </td>
+              <td class="price-col">Rp23.000</td>
+              <td class="price-col">Rp46.000</td>
+              <td class="price-col">Rp88.000</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="grade-name-cell">
+                  <span class="size-dots"><span style="width:13px;height:13px;"></span></span>
+                  <div>
+                    <span class="grade-name">Jumbo A</span>
+                    <span class="grade-butir">~66 butir/kg</span>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td class="price-col">Rp26.000</td>
-            <td class="price-col">Rp54.000</td>
-            <td class="price-col">Rp99.000</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+              </td>
+              <td class="price-col">Rp26.000</td>
+              <td class="price-col">Rp54.000</td>
+              <td class="price-col">Rp99.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-  <section class="category">
-    <div class="cat-head">
-      <span class="cat-num">03</span>
-      <h2 class="cat-title">Salt Bread</h2>
-    </div>
-    <p class="cat-desc">Roti asin lembut, dengan tiga pilihan rasa.</p>
-    <div class="variant-grid">
-      <div class="variant-card">
-        <div>
-          <div class="variant-name">Original</div>
-        </div>
-        <div class="variant-price">Rp17.000</div>
+    <!-- Category 03 -->
+    <section class="category">
+      <div class="cat-head">
+        <span class="cat-num">03</span>
+        <h2 class="cat-title">Salt Bread</h2>
       </div>
-      <div class="variant-card">
-        <div>
-          <div class="variant-name">Choco</div>
-        </div>
-        <div class="variant-price">Rp20.000</div>
-      </div>
-      <div class="variant-card">
-        <div>
-          <div class="variant-name">Garlic Cheese</div>
-        </div>
-        <div class="variant-price">Rp23.000</div>
-      </div>
-    </div>
-  </section>
+      <p class="cat-desc">Roti asin lembut, dengan tiga pilihan rasa.</p>
 
-  <section class="category">
-    <div class="cat-head">
-      <span class="cat-num">04</span>
-      <h2 class="cat-title">Salad & Kimbab</h2>
-    </div>
-    <p class="cat-desc">Sangat cocok buat menu makan kamu.</p>
-    <div class="variant-grid">
-      <div class="variant-card">
-        <div>
-          <div class="variant-name">Salad Sayur</div>
-        </div>
-        <div class="variant-price">Rp15.000</div>
-      </div>
-      <div class="variant-card">
-        <div>
-          <div class="variant-name">Kimbab Ori</div>
-        </div>
-        <div class="variant-price">Rp15.000</div>
-      </div>
-      <div class="variant-card">
-        <div>
-          <div class="variant-name">Katsu Roll</div>
-        </div>
-        <div class="variant-price">Rp18.000</div>
-      </div>
-      <div class="variant-card">
-        <div>
-          <div class="variant-name">Kimbab + Korean Chicken</div>
-        </div>
-        <div class="variant-price">Rp20.000</div>
-      </div>
-    </div>
-  </section>
+      <div class="variant-grid">
+        <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan%20Salt%20Bread%20Original" target="_blank" class="variant-card">
+          <div>
+            <div class="variant-name">Original</div>
+          </div>
+          <div class="variant-price">Rp17.000</div>
+        </a>
 
-  <footer>
-    Harga berlaku untuk sistem Pre-Order (PO) &middot; hubungi langsung untuk pemesanan
-  </footer>
+        <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan%20Salt%20Bread%20Choco" target="_blank" class="variant-card">
+          <div>
+            <div class="variant-name">Choco</div>
+          </div>
+          <div class="variant-price">Rp20.000</div>
+        </a>
 
-</div>
+        <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan%20Salt%20Bread%20Garlic%20Cheese" target="_blank" class="variant-card">
+          <div>
+            <div class="variant-name">Garlic Cheese</div>
+          </div>
+          <div class="variant-price">Rp23.000</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Category 04 -->
+    <section class="category">
+      <div class="cat-head">
+        <span class="cat-num">04</span>
+        <h2 class="cat-title">Salad & Kimbab</h2>
+      </div>
+      <p class="cat-desc">Sangat cocok buat menu makan kamu.</p>
+
+      <div class="variant-grid">
+        <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan%20Salad%20Sayur" target="_blank" class="variant-card">
+          <div>
+            <div class="variant-name">Salad Sayur</div>
+          </div>
+          <div class="variant-price">Rp15.000</div>
+        </a>
+
+        <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan%20Kimbab%20Ori" target="_blank" class="variant-card">
+          <div>
+            <div class="variant-name">Kimbab Ori</div>
+          </div>
+          <div class="variant-price">Rp15.000</div>
+        </a>
+
+        <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan%20Katsu%20Roll" target="_blank" class="variant-card">
+          <div>
+            <div class="variant-name">Katsu Roll</div>
+          </div>
+          <div class="variant-price">Rp18.000</div>
+        </a>
+
+        <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20pesan%20Kimbab%20%2B%20Korean%20Chicken" target="_blank" class="variant-card">
+          <div>
+            <div class="variant-name">Kimbab + Korean Chicken</div>
+          </div>
+          <div class="variant-price">Rp20.000</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Info Pemesanan Card -->
+    <div class="order-info-card">
+      <h3>Cara Pemesanan & Pengiriman</h3>
+      <p>Pesan langsung melalui WhatsApp untuk konfirmasi stok dan pengiriman (GoSend / GrabExpress / Ambil Sendiri).</p>
+      <a href="https://wa.me/6281234567890?text=Halo%20Cemilaan's,%20saya%20mau%20tanya%20tentang%20pemesanan" target="_blank" class="cta-btn">
+        💬 Hubungi WhatsApp Admin
+      </a>
+    </div>
+
+    <footer>
+      Harga berlaku untuk sistem Pre-Order (PO) &middot; Katalog Cemilaan's
+    </footer>
+
+  </div>
+
 </body>
 </html>
